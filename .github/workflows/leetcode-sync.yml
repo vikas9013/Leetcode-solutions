@@ -2,7 +2,7 @@ name: LeetCode Sync
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 */12 * * *"   # runs every 12 hours
   workflow_dispatch:
 
 jobs:
@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: LeetCode Sync
-        uses: anmol098/leetcode-sync-github@main
+      - name: Sync LeetCode submissions
+        uses: LeetCode-OpenSource/leetcode-sync@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           leetcode_session: ${{ secrets.LEETCODE_SESSION }}
