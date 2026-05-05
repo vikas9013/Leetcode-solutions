@@ -10,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Sync LeetCode submissions
-        uses: joshcai/leetcode-sync@v1
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: LeetCode Sync
+        uses: anmol098/leetcode-sync-github@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           leetcode_session: ${{ secrets.LEETCODE_SESSION }}
