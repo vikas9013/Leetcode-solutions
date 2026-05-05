@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Sync LeetCode submissions
-        uses: joshcai/leetcode-sync@main
+        uses: joshcai/leetcode-sync@v1   ✅
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           leetcode_session: ${{ secrets.LEETCODE_SESSION }}
